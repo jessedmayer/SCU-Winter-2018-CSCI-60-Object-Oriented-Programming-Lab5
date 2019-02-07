@@ -1,0 +1,23 @@
+#ifndef VAN_H
+#define VAN_H
+#include <string>
+#include "automobile.h"
+class Van : public Automobile
+{
+public:
+    Van();
+    Van(std::string imake, std::string imodel, int iyear, double iprice, int istall, int seatsOpen);
+    int getSeats();
+    bool park(bool lot[], int size);
+
+
+private:
+    int seats;
+    int stall1;
+    int stall2;
+};
+
+
+
+
+#endif 

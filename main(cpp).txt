@@ -1,0 +1,43 @@
+#include "automobile.h"
+#include "pickup.h"
+#include "van.h"
+#include <iostream>
+using namespace std;
+
+int main() {
+    bool carLot[10] = {0,0,0,0,1,0,1,1,0,0};
+   /* Automobile car1;
+    car1.park(carLot, 10);
+    
+   Pickup pickup1("Toyota", "Tundra", 2000, 20000, 2, 3, 1);
+    cout << pickup1.getCapacity() << endl;
+    cout << pickup1.isExtended() << endl;
+    pickup1.park(carLot, 10);
+   for (int i = 0; i < 10; i++) {
+        if (carLot[i] == 1) {
+            cout << "Filled" << endl;
+        } else {
+            cout << "Open" << endl;
+        }
+    }*/
+    Van van1("Make", "Model", 2000, 30, 1, 5);
+    Van van2("Make", "Model", 2000, 30, 1, 8);
+    cout << van1.getSeats() << endl;
+    van1.park(carLot, 10);
+    for (int i = 0; i < 10; i++) {
+        if (carLot[i] == 1) {
+            cout << "Filled" << endl;
+        } else {
+            cout << "Open" << endl;
+        }
+    }
+    van2.park(carLot, 10);
+    for (int i = 0; i < 10; i++) {
+        if (carLot[i] == 1) {
+            cout << "Filled" << endl;
+        } else {
+            cout << "Open" << endl;
+        }
+    }
+    return 0;
+}

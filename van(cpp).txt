@@ -1,0 +1,48 @@
+#include "van.h"
+
+
+Van::Van(): Automobile() {
+    seats = 0;
+}
+
+Van::Van(std::string imake, std::string imodel, int iyear, double iprice, int istall, int seatsOpen) : Automobile(imake,imodel, iyear, iprice, istall) {
+    seats = seatsOpen;
+}
+
+int Van::getSeats() {
+    return seats;
+}
+
+
+
+bool Van::park(bool lot[], int size){
+    if (seats > 7) {
+        int spot=size;
+        for(int i=0; i<size-1; i++){
+            if(!lot[i] && !lot[i+1])
+                spot = i;
+        }
+        if((spot+1)>=size)
+        return false;
+        else{
+            lot[spot] = true;
+            lot[spot+1] = true;
+            stall1 = spot;
+            stall2 = spot+1;
+            return true;
+        }
+    } else {
+        int spot=size;
+    for(int i=0; i<size; i++){
+        if(!lot[i])
+            spot = i;
+    }
+    if(spot>=size)
+       return false;
+    else{
+        lot[spot] = true;
+        stall1 = spot;
+        return true;
+    }
+}
+}

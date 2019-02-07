@@ -1,0 +1,26 @@
+#ifndef PICKUP_H
+#define PICKUP_H
+#include <string>
+#include "automobile.h"
+class Pickup : public Automobile
+{
+public:
+    Pickup();
+    //Pickup(std::string imake, std::string imodel, int iyear, double iprice, int istall);
+    Pickup(std::string imake, std::string imodel, int iyear, double iprice, int istall, int haul, bool isExtended);
+    int getCapacity();
+    bool isExtended();
+    bool park(bool lot[], int size);
+
+
+private:
+    int haulingCapacity;
+    bool extended;
+    int stall1;
+    int stall2;
+};
+
+
+
+
+#endif // PICKUP_H
